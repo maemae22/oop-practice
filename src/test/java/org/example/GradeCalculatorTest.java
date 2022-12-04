@@ -17,6 +17,7 @@ public class GradeCalculatorTest {
     // 3. 동적인 객체를 정적인 타입으로 추상화하여 도메인 모델링 하기
     // 이수한 과목 : 객체지향프로그래밍, 자료구조, 중국어회화 (객체가 3가지) --> 과목(코스) 클래스
 
+    // 핵심 뽀인트 !!
     // 5. 객체들을 포괄하는 타입에 적절한 책임을 할당
     // 이수한 과목을 전달하여 평균학점 계산을 요청 --> 학점 계산기 --> (학점수×교과목 평점)의 합계 --> 과목(코스)
     //                                                   --> 수강신청 총학점 수         --> 과목(코스)
@@ -29,6 +30,7 @@ public class GradeCalculatorTest {
                 new Course("자료구조", 3, "A+"));
 
         GradeCalculator gradeCalculator = new GradeCalculator(courses);
+        // GradeCalculator gradeCalculator = new GradeCalculator(new Courses(courses));
         double gradeResult = gradeCalculator.calculateGrade();
 
         assertThat(gradeResult).isEqualTo(4.5);
